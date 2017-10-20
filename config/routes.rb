@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :sessions
+  resources :groups
+  get '/' => 'users#index'
+  get '/main' => 'users#index'
+  get '/groups/:id/join' => 'groups#join'
+  get '/groups/:id/leave' => 'groups#leave'
+
+  get 'users/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
